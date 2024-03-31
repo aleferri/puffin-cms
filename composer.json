@@ -1,0 +1,42 @@
+{
+    "name": "alessio/puffin-cms",
+    "type": "library",
+    "license": "APL-2.0",
+    "autoload": {
+        "psr-4": {
+            "\\puffin\\cms\\": "src/"
+        }
+    },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/aleferri/plog.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/aleferri/basin.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/aleferri/puffin.git"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require-dev": {
+        "phpunit/phpunit": "^9.3",
+        "psalm/phar": "^5.2"
+    },
+    "require": {
+        "php": ">=8.0",
+        "alessio/plog": ">=0.0.1",
+        "alessio/basin": ">=0.0.3",
+        "alessio/puffin": ">=0.0.2"
+    },
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Alessio Ferri",
+            "email": "alessio.ferri.3012@gmail.com"
+        }
+    ]
+}
