@@ -19,7 +19,7 @@
  * under the License.
  */
 
-namespace puffin\cms\themes;
+namespace puffin\cms\pages;
 
 use puffin\template\Renderable;
 
