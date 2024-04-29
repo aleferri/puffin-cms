@@ -5,7 +5,10 @@
     "autoload": {
         "psr-4": {
             "\\puffin\\cms\\": "src/"
-        }
+        },
+        "files": [
+            "src\\ctags\\ctags.php"
+        ]
     },
     "repositories": [
         {
@@ -32,7 +35,6 @@
         "alessio/basin": ">=0.0.3",
         "alessio/puffin": ">=0.0.2"
     },
-    "license": "Apache-2.0",
     "authors": [
         {
             "name": "Alessio Ferri",
