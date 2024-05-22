@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-namespace puffin\cms\auth;
+namespace puffin\cms\auth\acl;
 
 use puffin\auth\Grant;
 

@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-namespace puffin\cms\auth;
+namespace puffin\cms\auth\impl;
 
 use basin\attributes\MapSource;
 use basin\attributes\MapPrimitive;
@@ -30,14 +30,20 @@ use basin\attributes\MapPrimitive;
 class ACLEntry {
 
     public function __construct(
+        #[MapPrimitive(context: 'sql', kind: 'int?', settings: [])]
+        private ?int $id = null,
         #[MapPrimitive(context: 'sql', kind: 'text', settings: [])]
         private $resource = '*',
         #[MapPrimitive(context: 'sql', kind: 'text', settings: [])]
         private $applicant = '*',
         #[MapPrimitive(context: 'sql', kind: 'text', settings: [])]
+        private $realm = '*',
+        #[MapPrimitive(context: 'sql', kind: 'text', settings: [])]
         private $grant = '*',
         #[MapPrimitive(context: 'sql', kind: 'int', settings: [])]
         private $policy = 0,
+        #[MapPrimitive(context: 'sql', kind: 'text', settings: [])]
+        private $scopes = [],
         #[MapPrimitive(context: 'sql', kind: 'int', settings: [])]
         private $priority = 100,
         #[MapPrimitive(context: 'sql', kind: 'datetime', settings: [])]
@@ -48,6 +54,10 @@ class ACLEntry {
 
     }
 
+    public function id(): ?int {
+        return $this->id;
+    }
+
     public function resource(): string {
         return $this->resource;
     }
@@ -56,12 +66,20 @@ class ACLEntry {
         return $this->applicant;
     }
 
+    public function realm(): string {
+        return $this->realm;
+    }
+
     public function grant(): string {
         return $this->grant;
     }
 
     public function policy(): int {
         return $this->policy;
+    }
+
+    public function scopes(): array {
+        return $this->scopes;
     }
 
     public function priority(): int {
